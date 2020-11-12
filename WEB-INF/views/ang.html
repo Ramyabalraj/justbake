@@ -1,0 +1,41 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="D:\Repo\JCOETJustbakestore\src\main\webapp\static\js\ang1.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+	<button class="btn btn-info prevnext pull-right" ng-click="makeArray()">Next <i class="fa fa-arrow-right"></i></button>
+		
+    <div ng-repeat="x in arr track by $index">{{x}}</div>
+		<p>Today's welcome message is:</p>
+
+	
+
+<select ng-model="selectedOption" ng-options="item.catName for item in myWelcome">
+    <option value="">Select Account</option>>
+</select>
+<br><br>
+<button class="btn btn-info prevnext pull-right" ng-click="showPopup(selectedOption)">Next <i class="fa fa-arrow-right"></i></button>
+	
+<br><br>
+
+<select ng-model="selectproduct" ng-options="item.productName for item in product ">
+    <option value="">Select Account</option>
+</select>
+<br><br>
+<button class="btn btn-info prevnext pull-right" ng-click="productdetails(selectproduct)">View Product <i class="fa fa-arrow-right"></i></button>
+	
+<h3 ng-model="productdetail" ng-repeat="item in productdet">{{productdetail.productName}}
+<br>
+{{productdetail.productPrice}}
+<br>
+{{productdetail.productDesc}}
+</h3>
+
+	</div>
+
+</body>
+</html>

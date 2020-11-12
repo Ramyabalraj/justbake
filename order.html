@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+	<script src="resources\static\js\ang1.js"></script>
+	<style>
+	#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+ 
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+	</style>
+	<script>
+function myFunction() {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="category">
+
+		<div class="container" class="col-sm-4">
+
+			<div class="row">
+				<div class="card" style="margin: 10px" class="col-sm-4"
+					ng-repeat="x in data">
+
+					<img src={{x.productImage}} alt="Card image cap"
+						style="height: 200px; width: 300px">
+					<div class="card-body">
+						<b><h3 class="card-title">{{x.productName}}</h3></b>
+						<h4 class="card-title">Rate: ${{x.productPrice}}</h4>
+						<div>
+							<b><h3 class="card-title">Amount: ${{x.orderPrice}}</h3></b>
+						</div>
+						<h6>
+							<p class="card-text">{{x.productDesc}}</p>
+						</h6>
+						<b><h4>Quantity :</h4></b>
+				
+						<h4>
+							<input type="number" ng-model="qty" value={{x.quantity}}>
+						</h4>
+					
+						<b><h4>Weight :</h4></b>
+					
+						<h4>
+							<input type="number" name="wgt" id="wgt" ng-model="wgt"
+								value={{x.weight}}>
+						</h4>
+					</div>
+
+					<div class="card-body">
+						<b><h4>
+		<a href="#!placeorder/{{x.productId}}/{{qty}}/{{wgt}}" class="card-link">PlaceOrder</a>
+	
+
+	
+							</h4></b>
+
+					</div>
+
+				</div>
+				
+			</div>
+			
+			<br>
+<div class="w3-panel w3-black w3-display-container" ng-show="successMessagebool">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-large w3-display-topright">&times;</span>
+  <h3><font color="gold" style="italics">Thank You!</font></h3>
+  <p><font color="gold" style="italics"> <strong>{{successMessage }}</strong></font></p>
+</div>
+
+		</div>
+
+	</div>
+</body>
+</html>

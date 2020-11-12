@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script src="resources\static\js\ang1.js"></script>
+
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<style>
+body {
+	margin: 0;
+	background-color: white;
+	font-style:italic;
+}
+
+.navbar {
+	overflow: hidden;
+    background-color: black;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+	float: left;
+	font-size: 16px;
+	color: gold;
+	font-style:italic;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+	
+}
+
+.row.content {
+	height: 450px
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+	padding-top: 20px;
+	height: 100%;
+font-size: 14px;
+color: brown;
+text-align: center;
+font-style:italic;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+	background-color: black;
+	color: gold;
+	padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+	.sidenav {
+		height: 100%;
+		padding: 15px;
+	}
+	.row.content {
+		height: auto;
+	}
+}
+
+
+
+@keyframes typing {
+    from { width: 100% }
+    to { width: 0 }
+    
+}
+
+.container {
+  position: relative;
+  font-family: Consolas, monospace;  
+}
+
+.typing {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  z-index: -1;
+}
+
+.hiders {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.hiders p {
+  position: relative; 
+  clear: both; 
+  margin: 0;
+  float: right; /* makes animation go left-to-right */
+  width:0; /* graceful degradation: if animation doesn't work, these are invisible by default */
+  background-color: white; /* same as page background */
+  animation: typing 2s steps(30, end);
+  animation-fill-mode: both;  /* load first keyframe on page load, leave on last frame at end */
+}
+  
+.hiders p:nth-child(2) {
+  animation-delay: 1s;
+}
+.hiders p:nth-child(3) {
+  animation-delay: 2s;
+}
+.hiders p:nth-child(4) {
+  animation-delay: 3s;
+}
+.hiders p:nth-child(5) {
+  animation-delay: 4s;
+}
+.hiders p:nth-child(6) {
+  animation-delay: 5s;
+}
+.hiders p:nth-child(7) {
+  animation-delay: 6s;
+}
+.hiders p:nth-child(8) {
+  animation-delay: 7s;
+}
+.hiders p:nth-child(9) {
+  animation-delay: 8s;
+}
+.hiders p:nth-child(10) {
+  animation-delay: 9s;
+}
+.hiders p:nth-child(11) {
+  animation-delay: 10s;
+}
+.hiders p:nth-child(12) {
+  animation-delay: 11s;
+}
+.hiders p:nth-child(13) {
+  animation-delay: 12s;
+}
+.hiders p:nth-child(14) {
+  animation-delay: 13s;
+}
+.hiders p:nth-child(15) {
+  animation-delay: 14s;
+}
+.hiders p:nth-child(16) {
+  animation-delay: 15s;
+}
+.hiders p:nth-child(17) {
+  animation-delay: 16s;
+}
+.hiders p:nth-child(18) {
+  animation-delay: 17s;
+}
+.hiders p:nth-child(19) {
+  animation-delay: 18s;
+}
+.hiders p:nth-child(20) {
+  animation-delay: 19s;
+}
+.hiders p:nth-child(21) {
+  animation-delay: 20s;
+}
+.hiders p:nth-child(22) {
+  animation-delay: 21s;
+}
+.hiders p:nth-child(23) {
+  animation-delay: 22s;
+}
+.hiders p:nth-child(24) {
+  animation-delay: 23s;
+}
+.hiders p:nth-child(25) {
+  animation-delay: 24s;
+}
+.hiders p:nth-child(26) {
+  animation-delay: 25s;
+}
+.hiders p:nth-child(27) {
+  animation-delay: 26s;
+}
+.hiders p:nth-child(28) {
+  animation-delay: 27s;
+}
+.hiders p:nth-child(29) {
+  animation-delay: 28s;
+}
+.hiders p:nth-child(30) {
+  animation-delay: 29s;
+}
+
+
+
+
+
+* {box-sizing: border-box;}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+   
+
+#cf {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
+}
+
+#cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf img.top:hover {
+  opacity:0;
+}
+
+
+#heading{
+font-family: 'Caveat', cursive;
+font-size: 80px;
+}
+
+      .blink {
+      animation: blinker 0.6s linear infinite;
+      color: #1c87c9;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: sans-serif;
+      }
+      @keyframes blinker {  
+      50% { opacity: 0; }
+      }
+
+</style>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 1000); // Change image every 2 seconds
+}
+</script>
+
+
+</head>
+<body>
+
+<div id="heading"><center><b><font  style="italic"  color="brown">Wonder   Cakery</font></b> <img src="resources/static/images/cakewhite.gif" height="5% "width="16%"></center>
+</div>
+
+	<div ng-app="myApp" ng-controller="category">
+		<div class="container">
+			<div class="container-fluid text-center">
+				<div class="row content">
+					<div class="col-sm-2 sidenav"
+						style="width:100px;">
+
+
+<!-- container div is required to set absolute positions within it, so that .typing and .hiders exactly overlap -->
+
+  <p class="typing" align="left" ><font face = "Comic sans MS" size ="2"><b>
+  Wonder Cakery is the right place for all your custom made confectionery needs. Our signature cakes are widely popular for their rich creamy taste and abundant use of fresh fruits and nuts. We also undertake preparation of special cakes for children according to choice of their favourite superheroes and sports.
+</font> </b> </p>
+
+  <div class="hiders">
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    
+  </div>
+
+		</div>
+<div class="col-sm-8 text-left">
+<div class="slideshow-container" style="margin: 10px">
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="resources/static/images/imgh4.jpg" style="width:100%">
+  <div class="carousel-caption">
+<h3>Mixed Nuts</h3>
+<p>Mixed Nuts is always so much fun!!</p>
+</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="resources/static/images/h2.jpg" style="width:100%">
+<div class="carousel-caption">
+<h3>Choco Nuts</h3>
+<p>Deligate chocolate fillings with Nuts!!</p>
+</div></div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="resources/static/images/h3.jpg" style="width:100%">
+ <div class="carousel-caption">
+<h3>Creamy Vanilla</h3>
+<p>We love the Creamy Cheese!!</p>
+</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="resources/static/images/h5.jpg" style="width:100%">
+<div class="carousel-caption">
+<h3>Strawberry Toppings</h3>
+<p>We love the Strawberry!!</p>
+</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="resources/static/images/MicrosoftTeams-image.jpg" style="width:100%">
+ <div class="carousel-caption">
+<h3>Sprinkled Chocolate</h3>
+<p>We love the Chocolate!!</p>
+</div>
+</div>
+<br>
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+    <span class="dot"></span> 
+      <span class="dot"></span> 
+</div>
+
+</div>
+<br>
+
+					</div>
+					<div class="col-sm-2 ">
+				    <p class="blink"><font face = "Comic sans MS" style="italic" size ="5" color="brown"><i class="fa fa-gift fa-2x" aria-hidden="true"></i>Offer!!!</font></p>
+					<div id="cf">
+					 
+                  <img class="bottom" src="resources/static/images/b3.jpg" style="width: 30%;"/>
+                  <img class="top" src="resources/static/images/banner5.jpg" style="width: 30%;"/>
+</div>
+ <marquee>Wonder cakery's world!!!</marquee>
+						<img src="resources/static/images/cake.gif" alt="New York"
+							style="width: 100%;">
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+		<footer class="container-fluid text-center">
+			<p font style="">Cake is a form of sweet food made from flour,
+				sugar, and other ingredients, that is usually baked. The most
+				commonly used cake ingredients include flour, sugar, eggs, butter or
+				oil or margarine, Cake is a form of sweet food made from flour,
+				sugar, and other ingredients, that is usually baked. The most
+				commonly used cake ingredients include flour, sugar, eggs, butter or
+				oil or margarine,Cake is a form of sweet food made from flour,
+				sugar, and other ingredients, that is usually baked. The most
+				commonly used cake ingredients include flour, sugar, eggs, butter or
+				oil or margarine,</p>
+		</footer>
+
+	</div>
+</body>
+</html>
